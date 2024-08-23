@@ -209,17 +209,18 @@
       <input type="text" placeholder="제목">
       <input type="text" placeholder="내용 (최대 100자)">
       <label for="user_profile_img">
-        <div class="btn-upload">+</div>
+          <a class="btn-upload">+</a>
       </label>
       <input accept=".jpg" onchange="PreviewImage();" type="file" id="user_profile_img" />
-      <button class="send-btn">send</button>
+      <div class="putImgBoard">
+        <div class="putImg">
+        </div>
+        <button class="send-btn">send</button>
     </div>
   </div>
-  <div id="sendslides">
-    <div class="putImg">
-    </div>
+</div>
+<div id="sendslides">
   </div>
-  <div class="a"></div>
   <a href="#" class="up-btn">↑</a>
   <script src="./js/script.js"></script>
 </body>

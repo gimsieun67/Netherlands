@@ -48,16 +48,20 @@ exits.forEach(exit => {
 
 const putclick = document.querySelector(".send-btn");
 const put = document.querySelector(".putImg");
+
 function PreviewImage() {
-        // 파일리더 생성 
-        var preview = new FileReader();
-        preview.onload = function (e) {
-        // img id 값 
-          const newImg = document.createElement("img");
-          newImg.id = "user_image";
-          newImg.src = e.target.result;
-          put.append(newImg);
+    // 파일리더 생성 
+    let preview = new FileReader();
+    preview.onload = function (e) {
+        const existingImg = document.getElementById("user_image");
+        if (existingImg) {
+            existingImg.remove();
+        }
+        const newImg = document.createElement("img");
+        newImg.id = "user_image";
+        newImg.src = e.target.result;
+        put.append(newImg);
     };
     // input id 값 
-  preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
-};
+    preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
+}

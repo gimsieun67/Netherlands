@@ -149,17 +149,18 @@ header {
 }
 .headerBg {
   background-color: beige;
-  cursor : url('../images/star\ \(1\).png') ,auto;
 }
 .container {
   display: flex;
   justify-content: center;
 }
 video {
-    position: relative;
-    width: 100VW;
-    height: 100%;
+  cursor: url('../images/star.png'), auto;
+  width: 100vw;  /* Ensures the video takes up the full width of the viewport */
+  height: 100%;
+  object-fit: cover;  /* Ensures the video covers the entire area without leaving any gaps */
 }
+
 .continent {
   width: 820px;
   height: 600px;
@@ -206,6 +207,7 @@ video {
   height: 100vh;
   padding-top: 120px;
   background-color: #FED8B1;
+  z-index: 99;
 }
 iframe {
  width: 300px;
@@ -386,14 +388,15 @@ bottom: 0;
 }
 .board-send {
   width: 650px;
-  height: 650px;
+  height: 750px;
   background-color: #987D9A;
   text-align: center;
-  line-height: 126px;
+  line-height: 100px;
 }
 .board-send > input {
   padding-left: 10px;
   font-size: 15px;
+  margin-top: 10px;
 }
 .board-send > input:nth-child(1) {
   width: 500px;
@@ -411,12 +414,16 @@ height: 150px;
   display: none;
 }
 .btn-upload {
-  margin: 0 auto;
-  width: 300px;
-  font-size: 55px;
-  border: solid 2px black;
-  background-color: #FEFAE0;
+  width: 50px;
+  height: 50px;
+  font-size: 45px;
   margin-top: 20px;
+  margin-right: 50px;
+  margin-left: 90px;
+}
+label {
+  width: 50px;
+  display: block;
 }
 .send-btn {
   width: 400px;
@@ -434,7 +441,4 @@ height: 150px;
 #user_image {
   width: 300px;
   height: 200px;
-}
-putImg {
-  line-height: 100px;
 }
