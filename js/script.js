@@ -65,3 +65,7 @@ function PreviewImage() {
     // input id 값 
     preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
 }
+
+putclick.addEventListener("click", () => {
+  
+})
