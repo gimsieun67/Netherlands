@@ -81,7 +81,7 @@ header {
   font-weight: 700;
 }
 .list > li > a {
-  font-family: 'goorm-sans-bold';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #987D9A;
   transition: 0.2s;
   font-weight: 700;
@@ -92,7 +92,7 @@ header {
 
 .text_box {
   justify-content: center;
-  color: rgb(110, 110, 110);
+  color: #C63C51;
   font-weight: 700;
   align-items: center;
   position: absolute;
@@ -113,7 +113,7 @@ header {
   font-size: 3.5rem;
 }
 .text {
-  background: #ffffff77;
+  background: #F6F5F2;
   padding: 10px;
   z-index: 1;
   font-size: 60px;
