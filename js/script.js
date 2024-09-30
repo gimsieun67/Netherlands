@@ -65,3 +65,62 @@ function PreviewImage() {
 }
 
 putclick.addEventListener("click", () => {});
+
+document.getElementById("send").addEventListener("click", function () {
+  const name = document.getElementById("name").value;
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value;
+  const imageFile = document.getElementById("image").files[0];
+
+  if (!name || !title || !content || !imageFile) {
+    alert("모든 필드를 입력하세요.");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function (e) {
+    // div 생성하여 gallery에 추가
+    const gallery = document.getElementById("gallery");
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("preview");
+
+    // 이미지 추가
+    const img = document.createElement("img");
+    img.src = e.target.result;
+    img.width = 100;
+    img.height = 100;
+    newDiv.appendChild(img);
+
+    // 클릭 이벤트 추가 (모달 창으로 표시)
+    newDiv.addEventListener("click", function () {
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-name").textContent = "이름: " + name;
+      document.getElementById("modal-content").textContent = "내용: " + content;
+      document.getElementById("modal-image").src = e.target.result;
+      document.getElementById("myModal").style.display = "block";
+    });
+
+    gallery.appendChild(newDiv);
+  };
+
+  reader.readAsDataURL(imageFile);
+
+  // 폼 초기화
+  document.getElementById("name").value = "";
+  document.getElementById("title").value = "";
+  document.getElementById("content").value = "";
+  document.getElementById("image").value = "";
+});
+
+// 모달 닫기
+document.getElementsByClassName("close")[0].addEventListener("click", function () {
+  document.getElementById("myModal").style.display = "none";
+});
+
+// 모달 외부 클릭 시 닫기
+window.addEventListener("click", function (event) {
+  const modal = document.getElementById("myModal");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});

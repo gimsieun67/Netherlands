@@ -201,25 +201,43 @@
     </div>
   </div>
   <div id="board">
-    <div class="boardImg">
+    <div class="board_img">
       <img src="./images/orange-42395_1280.png" alt="">
     </div>
-    <div class="board-send">
-      <input type="text" placeholder="이름">
-      <input type="text" placeholder="제목">
-      <input type="text" placeholder="내용 (최대 100자)">
-      <label for="user_profile_img">
-          <a class="btn-upload">+</a>
-      </label>
-      <input accept=".jpg" onchange="PreviewImage();" type="file" id="user_profile_img" />
-      <div class="putImgBoard">
-        <div class="putImg">
-        </div>
-        <button class="send-btn">send</button>
-    </div>
+    <div class="board_detail">
+      <label for="name"></label>
+      <input type="text" placeholder="name" id="name">
+      <br>
+      <label for="title"></label>
+      <input type="text" placeholder="title" id="title">
+      <br>
+      <label for="content"></label>
+      <textarea id="content" placeholder="detail" maxlength="100"></textarea>
+      <br>
+      <label class="label_img" for="image"></label>
+      <input type="file" accept=".gif, .jpg, .png" id="image">
+      <br>
+      <button id="send">send</button>
   </div>
-</div>
-<div id="sendslides">
+
+
+
+  <!-- 모달 창 -->
+  <div id="myModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-name"></p>
+          <p id="modal-content"></p>
+          <img id="modal-image" src="" alt="Selected Image" style="max-width: 100%;">
+      </div>
+  </div>
+
+    </div>
+<div id="sendslides">  
+  <div id="gallery">
+      <!-- 하단에 이미지들이 표시될 곳 -->
+  </div>
   </div>
   <a href="#" class="up-btn">↑</a>
   <script src="./js/script.js"></script>
