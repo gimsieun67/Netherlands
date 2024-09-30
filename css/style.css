@@ -1,9 +1,10 @@
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-ul,li {
+ul,
+li {
   list-style: none;
 }
 a {
@@ -18,31 +19,35 @@ body {
   animation: fadein 0.5s;
   transition: 1s;
   overflow-x: hidden;
-    font-family: "Noto Sans KR", sans-serif;
-     -ms-overflow-style: none;
- }
+  font-family: "Noto Sans KR", sans-serif;
+  -ms-overflow-style: none;
+}
 ::-webkit-scrollbar {
   display: none;
 }
-.box{
-   -ms-overflow-style: none;
+.box {
+  -ms-overflow-style: none;
 }
-.box::-webkit-scrollbar{
-  display:none;
+.box::-webkit-scrollbar {
+  display: none;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 
 @font-face {
-    font-family: 'goorm-sans-bold';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "goorm-sans-bold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
 @keyframes fadein {
-  from { opacity: 0; }
-  to { opacity: 0.5; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
 
 .name > img {
@@ -51,20 +56,24 @@ html{
   margin-top: 50px;
 }
 
-.name>img:hover{
-  animation: logoAnimation .8s;
+.name > img:hover {
+  animation: logoAnimation 0.8s;
 }
 
 @keyframes logoAnimation {
-  75%{transform: rotate(-375deg);}
-  100%{transform: rotate(-350deg);}
+  75% {
+    transform: rotate(-375deg);
+  }
+  100% {
+    transform: rotate(-350deg);
+  }
 }
 
 header {
   width: 100vw;
   position: fixed;
   z-index: 3;
-  background-color: #FEFAE0;
+  background-color: #fefae0;
   box-shadow: 1px 1px 5px rgba(0, 0, 9, 1);
   justify-content: space-around;
   align-items: center;
@@ -75,14 +84,14 @@ header {
 .list {
   font-size: 25px;
   gap: 35px;
-   /* font-family: 'PTAnboR'; */
+  /* font-family: 'PTAnboR'; */
   /* margin-top: 20px; */
   text-align: center;
   font-weight: 700;
 }
 .list > li > a {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #987D9A;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #987d9a;
   transition: 0.2s;
   font-weight: 700;
 }
@@ -92,7 +101,7 @@ header {
 
 .text_box {
   justify-content: center;
-  color: #C63C51;
+  color: #c63c51;
   font-weight: 700;
   align-items: center;
   position: absolute;
@@ -100,10 +109,9 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 100px;
-
 }
 
-.text_box{
+.text_box {
   font-size: 2rem;
   text-align: center;
 }
@@ -113,7 +121,7 @@ header {
   font-size: 3.5rem;
 }
 .text {
-  background: #F6F5F2;
+  background: #f6f5f2;
   padding: 10px;
   z-index: 1;
   font-size: 60px;
@@ -138,9 +146,9 @@ header {
   background-size: cover;
   background-position: center;
 }
-.headerBg::after{
+.headerBg::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   top: 0;
@@ -155,101 +163,105 @@ header {
   justify-content: center;
 }
 video {
-  cursor: url('../images/star.png'), auto;
-  width: 100vw;  /* Ensures the video takes up the full width of the viewport */
+  cursor: url("../images/star.png"), auto;
+  width: 100vw; /* Ensures the video takes up the full width of the viewport */
   height: 100%;
-  object-fit: cover;  /* Ensures the video covers the entire area without leaving any gaps */
+  object-fit: cover; /* Ensures the video covers the entire area without leaving any gaps */
 }
 
 .continent {
   width: 820px;
   height: 600px;
-    background-image: url("../images/continent-removebg-preview.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 10px;
-    margin-right: 65%;
-    background-size: 720px;
-    border-radius: 10%;
-    transition: 0.3s;
+  background-image: url("../images/continent-removebg-preview.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10px;
+  margin-right: 65%;
+  background-size: 720px;
+  border-radius: 10%;
+  transition: 0.3s;
 }
 .continent:hover {
   transform: scale(1.07);
-
 }
+
 .mapCK {
+  display: block;
+  width: 10px;
   font-size: 35px;
   text-align: center;
-  line-height: 180px;
-
+  padding-left: 10%;
 }
 .mapCK > a {
-  transition: .2s;
+  width: 20px;
+  height: 20px;
+  transition: 0.2s;
 }
 .mapCK > a:hover {
   transform: scale(1.1);
 }
- .mapCK > a:nth-child(1) {
-  padding-left: 30%;                                                                                                                                                                                                                                                                              
-} 
-.mapCK > a:nth-child(2) {
- padding-right: 10%;
-}
-.mapCK > a:nth-child(3) {
-  padding-left: 25%;
-} 
+
 .mapCK > a > img {
   width: 50px;
+}
+.mapCK > a:nth-child(1) {
+  margin-left: 50%;
+}
+.mapCK > a:nth-child(2) {
+  padding-right: 25%;
+}
+.mapCK > a:nth-child(3) {
+  padding-left: 20%;
 }
 #map {
   width: 100%;
   height: 100vh;
   padding-top: 120px;
-  background-color: #FED8B1;
+  background-color: #fed8b1;
   z-index: 99;
 }
 iframe {
- width: 300px;
-height: 200px;
-position: absolute;
-right: 0;
-bottom: 0;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-.backMapImg1 {                                                                                                                                                                                                                                                                                                                                              
+.backMapImg1 {
   background-image: url("../images/암스테르담.png");
-      background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-top: 10px;
   width: 100%;
   height: 300px;
   transition: 0.3s;
 }
-.backMapImg2 {                                                                                                                                                                                                                                                                                                                                              
+.backMapImg2 {
   background-image: url("../images/로테르트담.png");
-      background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-top: 10px;
   width: 100%;
   height: 300px;
   transition: 0.3s;
 }
-.backMapImg3 {                                                                                                                                                                                                                                                                                                                                              
+.backMapImg3 {
   background-image: url("../images/하르성.png");
-      background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-top: 10px;
   width: 100%;
   height: 300px;
   transition: 0.3s;
 }
-.backMapImg:hover >  h1 { 
+.backMapImg:hover > h1 {
   display: block;
 }
-.backMapImg:hover  {
+.backMapImg:hover {
   background-color: black;
   opacity: 0.5;
   border: solid 3px white;
@@ -271,10 +283,11 @@ bottom: 0;
   font-size: 30px;
   font-weight: 700;
 }
+
 .map1 {
   width: 900px;
   height: 700px;
-  background-color: #FFEBD4;
+  background-color: #ffebd4;
   /* border: solid 0.5px gainsboro; */
   border-radius: 30px;
   line-height: 30px;
@@ -291,7 +304,9 @@ bottom: 0;
   font-family: Arial, Helvetica, sans-serif;
   margin-bottom: 70px;
 }
-.m1,.m2,.m3 {
+.m1,
+.m2,
+.m3 {
   display: none;
 }
 .spin > li {
@@ -300,9 +315,7 @@ bottom: 0;
   border: solid 1px black;
   margin-top: 60px;
 }
-.clickImg {
-  width: 1000px;
-}
+
 .spin {
   justify-content: space-evenly;
 }
@@ -317,66 +330,67 @@ bottom: 0;
 }
 #turnimg {
   padding-top: 4%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #EECEB9;
-    /* display: none; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #eeceb9;
+  /* display: none; */
 }
 
 .flip-container {
-    perspective: 1000px;
+  perspective: 1000px;
 }
 .front > img {
   width: 300px;
 }
 .flipper {
-    position: relative;
-    width: 300px; /* 원하는 이미지 크기로 조정 */
-    height: 300px; /* 원하는 이미지 크기로 조정 */
-    transform-style: preserve-3d;
-    transition: transform 1.5s;
+  position: relative;
+  width: 300px; /* 원하는 이미지 크기로 조정 */
+  height: 300px; /* 원하는 이미지 크기로 조정 */
+  transform-style: preserve-3d;
+  transition: transform 1.5s;
 }
 
 .flipper:hover {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }
 
 .back {
-    width: 300px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #FED8B1;
-    transform: rotateY(180deg);
-    border: solid 10px white;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fed8b1;
+  transform: rotateY(180deg);
+  border: solid 10px white;
 }
 .c1 {
   padding-left: 5%;
 }
 .up-btn {
   border-radius: 20px;
-    position: fixed;
-    font-size: 70px;
-    right: 20px;
-    bottom: 20px; /* 추가: 화면 하단에 위치 */
-    font-weight: 700;
-    color: #921A40;
+  position: fixed;
+  font-size: 70px;
+  right: 20px;
+  bottom: 20px; /* 추가: 화면 하단에 위치 */
+  font-weight: 700;
+  color: #921a40;
 }
 #board {
   width: 100%;
   height: 100vh;
-  background-color: #E2BFD9;
+  background-color: #e2bfd9;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -384,12 +398,12 @@ bottom: 0;
 .boardImg > img {
   width: 500px;
   height: 400px;
-  background-color: #FEFAE0;
+  background-color: #fefae0;
 }
 .board-send {
   width: 650px;
   height: 750px;
-  background-color: #987D9A;
+  background-color: #987d9a;
   text-align: center;
   line-height: 100px;
 }
@@ -400,15 +414,15 @@ bottom: 0;
 }
 .board-send > input:nth-child(1) {
   width: 500px;
-height: 50px;
+  height: 50px;
 }
 .board-send > input:nth-child(2) {
   width: 500px;
-height: 50px;
+  height: 50px;
 }
 .board-send > input:nth-child(3) {
   width: 500px;
-height: 150px;
+  height: 150px;
 }
 #user_profile_img {
   display: none;
@@ -430,13 +444,13 @@ label {
   height: 50px;
   border-radius: 20px;
   border: none;
-  background-color: #F7EFE5;
+  background-color: #f7efe5;
   font-size: 20px;
 }
 #sendslides {
   width: 100%;
   height: 100vh;
-  background-color: #F7B5CA;
+  background-color: #f7b5ca;
 }
 #user_image {
   width: 300px;

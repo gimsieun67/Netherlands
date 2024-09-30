@@ -1,14 +1,14 @@
-const content = "Welcome to Holland!";
+const content = "Welcome to Netherlands!";
 const text = document.querySelector(".text");
 let i = 0;
 
 function typing() {
-    let txt = content[i++];
-    text.innerHTML += txt === "\n" ? "<br>" : txt;
-    if (i > content.length) {
-        text.textContent = "";
-        i = 0;
-    }
+  let txt = content[i++];
+  text.innerHTML += txt === "\n" ? "<br>" : txt;
+  if (i > content.length) {
+    text.textContent = "";
+    i = 0;
+  }
 }
 setInterval(typing, 350);
 
@@ -36,7 +36,7 @@ clickm3.addEventListener("click", () => {
   m3.style.display = "block";
 });
 
-exits.forEach(exit => {
+exits.forEach((exit) => {
   exit.addEventListener("click", () => {
     m1.style.display = "none";
     m2.style.display = "none";
@@ -44,28 +44,24 @@ exits.forEach(exit => {
   });
 });
 
-
-
 const putclick = document.querySelector(".send-btn");
 const put = document.querySelector(".putImg");
 
 function PreviewImage() {
-    // 파일리더 생성 
-    let preview = new FileReader();
-    preview.onload = function (e) {
-        const existingImg = document.getElementById("user_image");
-        if (existingImg) {
-            existingImg.remove();
-        }
-        const newImg = document.createElement("img");
-        newImg.id = "user_image";
-        newImg.src = e.target.result;
-        put.append(newImg);
-    };
-    // input id 값 
-    preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
+  // 파일리더 생성
+  let preview = new FileReader();
+  preview.onload = function (e) {
+    const existingImg = document.getElementById("user_image");
+    if (existingImg) {
+      existingImg.remove();
+    }
+    const newImg = document.createElement("img");
+    newImg.id = "user_image";
+    newImg.src = e.target.result;
+    put.append(newImg);
+  };
+  // input id 값
+  preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
 }
 
-putclick.addEventListener("click", () => {
-  
-})
+putclick.addEventListener("click", () => {});
