@@ -94,9 +94,9 @@ header {
   transition: 0.2s;
   font-weight: 700;
 }
-.list > li:hover > a {
-  transform: scale(1.1);
-}
+/* .list > li:hover > a {
+  transform: scale(1.9);
+} */
 
 .text_box {
   justify-content: center;
@@ -373,15 +373,6 @@ iframe {
   font-weight: 700;
   color: #921a40;
 }
-#board {
-  width: 100%;
-  height: 100vh;
-  background-color: #e2bfd9;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-
 .modal {
   display: none; /* 기본적으로 숨김 */
   position: fixed;
@@ -402,30 +393,8 @@ iframe {
   max-width: 500px; /* 모달 창 최대 너비 */
   text-align: center;
 }
-.board_detail {
-  background-color: #921a40;
-  width: 500px;
-  height: 600px;
-  line-height: 100px;
-  text-align: center;
-}
-.board_detail > input {
-  width: 400px;
-  height: 50px;
-  padding-left: 10px;
-  border-radius: 20px;
-  border: none;
-}
-.board_detail > textarea {
-  width: 400px;
-  height: 100px;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-.board_img > img {
-  width: 500px;
-}
 
+/* 닫기 버튼 스타일 */
 .close {
   color: #aaa;
   float: right;
@@ -444,16 +413,3 @@ iframe {
   margin-top: 10px;
   cursor: pointer;
 }
-
-#sendslides {
-  width: 100%;
-  height: 100vh;
-  background-color: #f7b5ca;
-}
-#user_image {
-  width: 200px;
-  height: 150px;
-}
-/* input type="file" 숨기기 */
-
-/* 파일 선택 커스텀 버튼 스타일 */

@@ -20,22 +20,19 @@ const m1 = document.querySelector(".m1");
 const m2 = document.querySelector(".m2");
 const m3 = document.querySelector(".m3");
 
-clickm1.addEventListener("click", () => {
-  m1.style.display = "block";
-  m2.style.display = "none";
-  m3.style.display = "none";
-});
-clickm2.addEventListener("click", () => {
-  m1.style.display = "none";
-  m2.style.display = "block";
-  m3.style.display = "none";
-});
-clickm3.addEventListener("click", () => {
-  m1.style.display = "none";
-  m2.style.display = "none";
-  m3.style.display = "block";
-});
+clickm1.addEventListener("click", () => toggleDisplay(m1, [m2, m3]));
+clickm2.addEventListener("click", () => toggleDisplay(m2, [m1, m3]));
+clickm3.addEventListener("click", () => toggleDisplay(m3, [m1, m2]));
 
+// 토글 함수 생성
+function toggleDisplay(showElement, hideElements) {
+  showElement.style.display = "block";
+  hideElements.forEach((element) => {
+    element.style.display = "none";
+  });
+}
+
+// 닫기 버튼 이벤트 설정
 exits.forEach((exit) => {
   exit.addEventListener("click", () => {
     m1.style.display = "none";
@@ -44,34 +41,25 @@ exits.forEach((exit) => {
   });
 });
 
-const putclick = document.querySelector(".send-btn");
-const put = document.querySelector(".putImg");
-
-function PreviewImage() {
-  // 파일리더 생성
-  let preview = new FileReader();
-  preview.onload = function (e) {
-    const existingImg = document.getElementById("user_image");
-    if (existingImg) {
-      existingImg.remove();
-    }
-    const newImg = document.createElement("img");
-    newImg.id = "user_image";
-    newImg.src = e.target.result;
-    put.append(newImg);
-  };
-  // input id 값
-  preview.readAsDataURL(document.getElementById("user_profile_img").files[0]);
-}
-
-putclick.addEventListener("click", () => {});
-
 document.getElementById("send").addEventListener("click", function () {
-  const name = document.getElementById("name").value;
-  const title = document.getElementById("title").value;
-  const content = document.getElementById("content").value;
-  const imageFile = document.getElementById("image").files[0];
+  const nameField = document.getElementById("name");
+  const titleField = document.getElementById("title");
+  const contentField = document.getElementById("content");
+  const imageInput = document.getElementById("image");
 
+  // 필드 값 가져오기
+  const name = nameField ? nameField.value : "";
+  const title = titleField ? titleField.value : "";
+  const content = contentField ? contentField.value : "";
+  const imageFile = imageInput ? imageInput.files[0] : null;
+
+  // 디버깅 로그
+  console.log("Name:", name);
+  console.log("Title:", title);
+  console.log("Content:", content);
+  console.log("Image File:", imageFile);
+
+  // 필드가 비어 있는지 확인
   if (!name || !title || !content || !imageFile) {
     alert("모든 필드를 입력하세요.");
     return;
@@ -103,24 +91,12 @@ document.getElementById("send").addEventListener("click", function () {
     gallery.appendChild(newDiv);
   };
 
+  // 파일을 로드하여 갤러리에 이미지 추가
   reader.readAsDataURL(imageFile);
 
   // 폼 초기화
-  document.getElementById("name").value = "";
-  document.getElementById("title").value = "";
-  document.getElementById("content").value = "";
-  document.getElementById("image").value = "";
-});
-
-// 모달 닫기
-document.getElementsByClassName("close")[0].addEventListener("click", function () {
-  document.getElementById("myModal").style.display = "none";
-});
-
-// 모달 외부 클릭 시 닫기
-window.addEventListener("click", function (event) {
-  const modal = document.getElementById("myModal");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
+  nameField.value = "";
+  titleField.value = "";
+  contentField.value = "";
+  imageInput.value = "";
 });
