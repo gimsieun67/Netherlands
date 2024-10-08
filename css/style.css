@@ -67,349 +67,350 @@ html {
     transform: rotate(-350deg);
   }
 }
-
-header {
-  width: 100vw;
-  position: fixed;
-  z-index: 3;
-  background-color: #fefae0;
-  box-shadow: 1px 1px 5px rgba(0, 0, 9, 1);
-  justify-content: space-around;
-  align-items: center;
-  gap: 20%;
-  height: 100px;
-}
-
-.list {
-  font-size: 25px;
-  gap: 35px;
-  /* font-family: 'PTAnboR'; */
-  /* margin-top: 20px; */
-  text-align: center;
-  font-weight: 700;
-}
-.list > li > a {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #987d9a;
-  transition: 0.2s;
-  font-weight: 700;
-}
-/* .list > li:hover > a {
-  transform: scale(1.9);
-} */
-
-.text_box {
-  justify-content: center;
-  color: #c63c51;
-  font-weight: 700;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 100px;
-}
-
-.text_box {
-  font-size: 2rem;
-  text-align: center;
-}
-.blink {
-  width: 800px;
-  animation: blink 0.5s infinite;
-  font-size: 3.5rem;
-}
-.text {
-  background: #f6f5f2;
-  padding: 10px;
-  z-index: 1;
-  font-size: 60px;
-  border-radius: 10px;
-}
-.text:hover {
-  cursor: none;
-}
-@keyframes blink {
-  to {
-    opacity: 0;
+@media (max-width: 1680px) {
+  header {
+    width: 100vw;
+    position: fixed;
+    z-index: 3;
+    background-color: #fefae0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 9, 1);
+    justify-content: space-around;
+    align-items: center;
+    gap: 20%;
+    height: 100px;
   }
-}
-.headerBg {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.headerBg::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: -999999;
-  /* background-color: rgba(0, 0, 0, 0.3); */
-}
-.headerBg {
-  background-color: beige;
-}
-.container {
-  display: flex;
-  justify-content: center;
-}
-video {
-  cursor: url("../images/star.png"), auto;
-  width: 100vw; /* Ensures the video takes up the full width of the viewport */
-  height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire area without leaving any gaps */
-}
 
-.continent {
-  width: 820px;
-  height: 600px;
-  background-image: url("../images/continent-removebg-preview.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 10px;
-  margin-right: 65%;
-  background-size: 720px;
-  border-radius: 10%;
-  transition: 0.3s;
-}
-.continent:hover {
-  transform: scale(1.07);
-}
-.mapCK {
-  width: 50px;
-  padding-top: 60px;
-  margin-left: 50%;
-  line-height: 130px;
-}
-.mapCK > a > img {
-  width: 50px;
-  height: 50px;
-}
-.mapCK > a:nth-child(1) {
-  padding-left: 80px;
-}
-.mapCK > a:nth-child(3) {
-  padding-right: 80px;
-}
-#map {
-  width: 100%;
-  height: 100vh;
-  padding-top: 120px;
-  background-color: #fed8b1;
-  z-index: 99;
-}
-iframe {
-  width: 300px;
-  height: 200px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-}
-.backMapImg1 {
-  background-image: url("../images/암스테르담.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-top: 10px;
-  width: 100%;
-  height: 300px;
-  transition: 0.3s;
-}
-.backMapImg2 {
-  background-image: url("../images/로테르트담.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-top: 10px;
-  width: 100%;
-  height: 300px;
-  transition: 0.3s;
-}
-.backMapImg3 {
-  background-image: url("../images/하르성.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding-top: 10px;
-  width: 100%;
-  height: 300px;
-  transition: 0.3s;
-}
-.backMapImg:hover > h1 {
-  display: block;
-}
-.backMapImg:hover {
-  background-color: black;
-  opacity: 0.5;
-  border: solid 3px white;
-}
-.backMapImg > h1 {
-  text-align: center;
-  padding-top: 15%;
-  color: gold;
-  opacity: 0.9;
-  display: none;
-}
-.map1 > img {
-  padding-top: 10px;
-  width: 100%;
-  height: 300px;
-}
-.map1 > a {
-  justify-content: center;
-  font-size: 30px;
-  font-weight: 700;
-}
+  .list {
+    font-size: 25px;
+    gap: 35px;
+    /* font-family: 'PTAnboR'; */
+    /* margin-top: 20px; */
+    text-align: center;
+    font-weight: 700;
+  }
+  .list > li > a {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: #987d9a;
+    transition: 0.2s;
+    font-weight: 700;
+  }
+  /* .list > li:hover > a {
+    transform: scale(1.9);
+    } */
 
-.map1 {
-  width: 900px;
-  height: 700px;
-  background-color: #ffebd4;
-  /* border: solid 0.5px gainsboro; */
-  border-radius: 30px;
-  line-height: 30px;
-  position: absolute;
-  top: 120%;
-  margin-left: 50%;
-}
-.map1TxT {
-  font-size: 15px;
-  padding-left: 20px;
-  padding-top: 25px;
-  line-height: 50px;
-  font-weight: 700;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 70px;
-}
-.m1,
-.m2,
-.m3 {
-  display: none;
-}
-.spin > li {
-  width: 200px;
-  height: 200px;
-  border: solid 1px black;
-  margin-top: 60px;
-}
+  .text_box {
+    justify-content: center;
+    color: #c63c51;
+    font-weight: 700;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+  }
 
-.spin {
-  justify-content: space-evenly;
-}
-.clickImg > a {
-  width: 100px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  font-weight: 550;
-  background-color: #e3242a9d;
-  margin-left: 80%;
-}
-#turnimg {
-  padding-top: 4%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #eeceb9;
-  /* display: none; */
-}
+  .text_box {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .blink {
+    width: 800px;
+    animation: blink 0.5s infinite;
+    font-size: 3.5rem;
+  }
+  .text {
+    background: #f6f5f2;
+    padding: 10px;
+    z-index: 1;
+    font-size: 60px;
+    border-radius: 10px;
+  }
+  .text:hover {
+    cursor: none;
+  }
+  @keyframes blink {
+    to {
+      opacity: 0;
+    }
+  }
+  .headerBg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .headerBg::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -999999;
+    /* background-color: rgba(0, 0, 0, 0.3); */
+  }
+  .headerBg {
+    background-color: beige;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  video {
+    cursor: url("../images/star.png"), auto;
+    width: 100vw; /* Ensures the video takes up the full width of the viewport */
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area without leaving any gaps */
+  }
 
-.flip-container {
-  perspective: 1000px;
-}
-.front > img {
-  width: 300px;
-}
-.flipper {
-  position: relative;
-  width: 300px; /* 원하는 이미지 크기로 조정 */
-  height: 300px; /* 원하는 이미지 크기로 조정 */
-  transform-style: preserve-3d;
-  transition: transform 1.5s;
-}
+  .continent {
+    width: 820px;
+    height: 600px;
+    background-image: url("../images/continent-removebg-preview.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 10px;
+    margin-right: 65%;
+    background-size: 720px;
+    border-radius: 10%;
+    transition: 0.3s;
+  }
+  .continent:hover {
+    transform: scale(1.07);
+  }
+  .mapCK {
+    width: 50px;
+    padding-top: 60px;
+    margin-left: 50%;
+    line-height: 130px;
+  }
+  .mapCK > a > img {
+    width: 50px;
+    height: 50px;
+  }
+  .mapCK > a:nth-child(1) {
+    padding-left: 80px;
+  }
+  .mapCK > a:nth-child(3) {
+    padding-right: 80px;
+  }
+  #map {
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+    background-color: #fed8b1;
+    z-index: 99;
+  }
+  iframe {
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .backMapImg1 {
+    background-image: url("../images/암스테르담.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10px;
+    width: 100%;
+    height: 300px;
+    transition: 0.3s;
+  }
+  .backMapImg2 {
+    background-image: url("../images/로테르트담.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10px;
+    width: 100%;
+    height: 300px;
+    transition: 0.3s;
+  }
+  .backMapImg3 {
+    background-image: url("../images/하르성.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 10px;
+    width: 100%;
+    height: 300px;
+    transition: 0.3s;
+  }
+  .backMapImg:hover > h1 {
+    display: block;
+  }
+  .backMapImg:hover {
+    background-color: black;
+    opacity: 0.5;
+    border: solid 3px white;
+  }
+  .backMapImg > h1 {
+    text-align: center;
+    padding-top: 15%;
+    color: gold;
+    opacity: 0.9;
+    display: none;
+  }
+  .map1 > img {
+    padding-top: 10px;
+    width: 100%;
+    height: 300px;
+  }
+  .map1 > a {
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+  }
 
-.flipper:hover {
-  transform: rotateY(180deg);
-}
+  .map1 {
+    width: 900px;
+    height: 700px;
+    background-color: #ffebd4;
+    /* border: solid 0.5px gainsboro; */
+    border-radius: 30px;
+    line-height: 30px;
+    position: absolute;
+    top: 120%;
+    margin-left: 50%;
+  }
+  .map1TxT {
+    font-size: 15px;
+    padding-left: 20px;
+    padding-top: 25px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 70px;
+  }
+  .m1,
+  .m2,
+  .m3 {
+    display: none;
+  }
+  .spin > li {
+    width: 200px;
+    height: 200px;
+    border: solid 1px black;
+    margin-top: 60px;
+  }
 
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
+  .spin {
+    justify-content: space-evenly;
+  }
+  .clickImg > a {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    font-weight: 550;
+    background-color: #e3242a9d;
+    margin-left: 80%;
+  }
+  #turnimg {
+    padding-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #eeceb9;
+    /* display: none; */
+  }
 
-.back {
-  width: 300px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #fed8b1;
-  transform: rotateY(180deg);
-  border: solid 10px white;
-}
-.c1 {
-  padding-left: 5%;
-}
-.up-btn {
-  border-radius: 20px;
-  position: fixed;
-  font-size: 70px;
-  right: 20px;
-  bottom: 20px; /* 추가: 화면 하단에 위치 */
-  font-weight: 700;
-  color: #921a40;
-}
-.modal {
-  display: none; /* 기본적으로 숨김 */
-  position: fixed;
-  z-index: 1000; /* 화면의 앞에 나타나도록 */
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
-}
+  .flip-container {
+    perspective: 1000px;
+  }
+  .front > img {
+    width: 300px;
+  }
+  .flipper {
+    position: relative;
+    width: 300px; /* 원하는 이미지 크기로 조정 */
+    height: 300px; /* 원하는 이미지 크기로 조정 */
+    transform-style: preserve-3d;
+    transition: transform 1.5s;
+  }
 
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 500px; /* 모달 창 최대 너비 */
-  text-align: center;
-}
+  .flipper:hover {
+    transform: rotateY(180deg);
+  }
 
-/* 닫기 버튼 스타일 */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+  .front,
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+  .back {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fed8b1;
+    transform: rotateY(180deg);
+    border: solid 10px white;
+  }
+  .c1 {
+    padding-left: 5%;
+  }
+  .up-btn {
+    border-radius: 20px;
+    position: fixed;
+    font-size: 70px;
+    right: 20px;
+    bottom: 20px; /* 추가: 화면 하단에 위치 */
+    font-weight: 700;
+    color: #921a40;
+  }
+  .modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000; /* 화면의 앞에 나타나도록 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 배경 */
+  }
 
-.preview {
-  margin-top: 10px;
-  cursor: pointer;
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* 모달 창 최대 너비 */
+    text-align: center;
+  }
+
+  /* 닫기 버튼 스타일 */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .preview {
+    margin-top: 10px;
+    cursor: pointer;
+  }
 }
