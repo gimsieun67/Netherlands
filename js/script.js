@@ -3,13 +3,16 @@ const text = document.querySelector(".text");
 let i = 0;
 
 function typing() {
-  let txt = content[i++];
-  text.innerHTML += txt === "\n" ? "<br>" : txt;
-  if (i > content.length) {
-    text.textContent = "";
-    i = 0;
+  if (i < content.length) {
+    // Ensure it types until the end of content
+    let txt = content[i++];
+    text.innerHTML += txt === "\n" ? "<br>" : txt;
+  } else {
+    text.innerHTML = ""; // Clear the text after it finishes typing
+    i = 0; // Reset index
   }
 }
+
 setInterval(typing, 350);
 
 const exits = document.querySelectorAll(".exit");
@@ -24,7 +27,6 @@ clickm1.addEventListener("click", () => toggleDisplay(m1, [m2, m3]));
 clickm2.addEventListener("click", () => toggleDisplay(m2, [m1, m3]));
 clickm3.addEventListener("click", () => toggleDisplay(m3, [m1, m2]));
 
-// 토글 함수 생성
 function toggleDisplay(showElement, hideElements) {
   showElement.style.display = "block";
   hideElements.forEach((element) => {
@@ -32,7 +34,6 @@ function toggleDisplay(showElement, hideElements) {
   });
 }
 
-// 닫기 버튼 이벤트 설정
 exits.forEach((exit) => {
   exit.addEventListener("click", () => {
     m1.style.display = "none";
@@ -41,62 +42,58 @@ exits.forEach((exit) => {
   });
 });
 
-document.getElementById("send").addEventListener("click", function () {
-  const nameField = document.getElementById("name");
-  const titleField = document.getElementById("title");
-  const contentField = document.getElementById("content");
+document.getElementById("send").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const title = document.getElementById("title").value;
+  const content = document.getElementById("content").value; // Use a different variable name to avoid conflict
   const imageInput = document.getElementById("image");
+  const imageFile = imageInput.files[0];
 
-  // 필드 값 가져오기
-  const name = nameField ? nameField.value : "";
-  const title = titleField ? titleField.value : "";
-  const content = contentField ? contentField.value : "";
-  const imageFile = imageInput ? imageInput.files[0] : null;
-
-  // 디버깅 로그
-  console.log("Name:", name);
-  console.log("Title:", title);
-  console.log("Content:", content);
-  console.log("Image File:", imageFile);
-
-  // 필드가 비어 있는지 확인
-  if (!name || !title || !content || !imageFile) {
-    alert("모든 필드를 입력하세요.");
+  if (!imageFile) {
+    console.error("Image input or file not found");
+    alert("Please select an image before submitting!");
     return;
   }
 
-  const reader = new FileReader();
-  reader.onload = function (e) {
-    // div 생성하여 gallery에 추가
-    const gallery = document.getElementById("gallery");
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("preview");
+  if (name && title && content && imageFile) {
+    const reader = new FileReader();
 
-    // 이미지 추가
-    const img = document.createElement("img");
-    img.src = e.target.result;
-    img.width = 100;
-    img.height = 100;
-    newDiv.appendChild(img);
+    reader.onload = function (e) {
+      const newImage = document.createElement("img");
+      newImage.src = e.target.result;
+      newImage.classList.add("gallery-img");
+      newImage.style.maxWidth = "150px";
 
-    // 클릭 이벤트 추가 (모달 창으로 표시)
-    newDiv.addEventListener("click", function () {
-      document.getElementById("modal-title").textContent = title;
-      document.getElementById("modal-name").textContent = "이름: " + name;
-      document.getElementById("modal-content").textContent = "내용: " + content;
-      document.getElementById("modal-image").src = e.target.result;
-      document.getElementById("myModal").style.display = "block";
-    });
+      const gallery = document.getElementById("gallery");
+      const galleryItem = document.createElement("div");
+      galleryItem.classList.add("gallery-item");
+      galleryItem.appendChild(newImage);
+      gallery.appendChild(galleryItem);
 
-    gallery.appendChild(newDiv);
-  };
+      newImage.addEventListener("click", function () {
+        const modal = document.getElementById("myModal");
+        const modalTitle = document.getElementById("modal-title");
+        const modalName = document.getElementById("modal-name");
+        const modalContent = document.getElementById("modal-content");
+        const modalImage = document.getElementById("modal-image");
 
-  // 파일을 로드하여 갤러리에 이미지 추가
-  reader.readAsDataURL(imageFile);
+        modalTitle.textContent = title;
+        modalName.textContent = name;
+        modalContent.textContent = content;
+        modalImage.src = e.target.result;
 
-  // 폼 초기화
-  nameField.value = "";
-  titleField.value = "";
-  contentField.value = "";
-  imageInput.value = "";
+        modal.style.display = "block";
+      });
+    };
+
+    reader.readAsDataURL(imageFile);
+  } else {
+    alert("Please fill out all fields before submitting!");
+  }
+});
+
+document.querySelector(".close").addEventListener("click", function () {
+  document.getElementById("myModal").style.display = "none";
 });
