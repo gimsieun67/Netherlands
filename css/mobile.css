@@ -34,7 +34,7 @@
   }
   .map1 {
     width: 445px;
-    height: 600px;
+    height: 390px;
     background-color: #ffebd4;
     line-height: 20px;
     position: absolute;
@@ -42,7 +42,7 @@
     right: -2%;
   }
   .map1TxT {
-    font-size: 10px;
+    font-size: 9px;
     padding-left: 20px;
     padding-top: 25px;
     line-height: 50px;
