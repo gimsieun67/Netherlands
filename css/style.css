@@ -67,7 +67,7 @@ html {
     transform: rotate(-350deg);
   }
 }
-@media (max-width: 1920px) {
+@media (max-width: 2400px) {
   header {
     width: 100vw;
     position: fixed;
@@ -94,9 +94,9 @@ html {
     transition: 0.2s;
     font-weight: 700;
   }
-  /* .list > li:hover > a {
+  .list > li > a:hover {
     transform: scale(1.9);
-    } */
+  }
 
   .text_box {
     justify-content: center;
@@ -169,17 +169,14 @@ html {
   }
 
   .continent {
-    width: 820px;
+    width: 400px;
     height: 600px;
-    background-image: url("../images/continent-removebg-preview.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 10px;
-    margin-right: 65%;
-    background-size: 720px;
-    border-radius: 10%;
     transition: 0.3s;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  .continent > img {
+    position: absolute;
   }
   .continent:hover {
     transform: scale(1.07);
@@ -189,16 +186,21 @@ html {
     padding-top: 60px;
     margin-left: 50%;
     line-height: 130px;
+    z-index: 4;
+    position: absolute;
   }
   .mapCK > a > img {
     width: 50px;
     height: 50px;
   }
   .mapCK > a:nth-child(1) {
-    padding-left: 80px;
+    padding-left: 150px;
   }
   .mapCK > a:nth-child(3) {
-    padding-right: 80px;
+    padding-left: 150px;
+  }
+  .mapCK > a > img {
+    transform: scale(1.01);
   }
   #map {
     width: 100%;

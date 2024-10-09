@@ -27,4 +27,56 @@
   .headerBg {
     height: 250px;
   }
+  .continent {
+    position: relative;
+    right: 90px;
+    bottom: 80px;
+  }
+  .map1 {
+    width: 445px;
+    height: 600px;
+    background-color: #ffebd4;
+    line-height: 20px;
+    position: absolute;
+    top: 85%;
+    right: -2%;
+  }
+  .map1TxT {
+    font-size: 10px;
+    padding-left: 20px;
+    padding-top: 25px;
+    line-height: 50px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 70px;
+  }
+  .backMapImg {
+    width: 400px;
+    height: 200px;
+    margin-left: 25px;
+  }
+  iframe {
+    display: none;
+  }
+  #turnimg {
+    height: 500px;
+  }
+  .front > img {
+    width: 70px;
+  }
+  .back {
+    width: 70px;
+    height: 46px;
+    font-size: 5px;
+  }
+  .flipper {
+    position: relative;
+    width: 100px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform 1.5s;
+  }
+  .c1 {
+    margin-top: 70px;
+  }
 }
